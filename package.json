@@ -1,14 +1,18 @@
 {
-  "name": "ProjectSkeleton",
+  "name": "spotify-discovery-3d",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "karma start --single-run",
     "build": "webpack",
     "dev": "webpack --watch"
   },
   "author": "Tom Valorsa (github/tomvalorsa)",
   "dependencies": {
+    "aframe": "^0.3.2",
+    "aframe-bmfont-text-component": "^0.1.4",
+    "aframe-react": "^3.4.0",
+    "aframe-text-component": "^0.3.0",
+    "autoprefixer": "^6.4.0",
     "babel-core": "^6.10.4",
     "babel-loader": "^6.2.4",
     "babel-plugin-transform-class-properties": "^6.10.2",
@@ -21,12 +25,10 @@
     "babel-runtime": "^6.9.2",
     "copy-webpack-plugin": "^3.0.1",
     "css-loader": "^0.23.1",
-    "enzyme": "^2.4.1",
     "file-loader": "^0.9.0",
     "get-root": "0.0.2",
     "html-webpack-plugin": "^2.21.0",
     "imports-loader": "^0.6.5",
-    "jasmine-core": "^2.4.1",
     "json-loader": "^0.5.4",
     "normalize.css": "^4.1.1",
     "pluralize": "^3.0.0",
@@ -57,14 +59,5 @@
       "react",
       "stage-0"
     ]
-  },
-  "devDependencies": {
-    "karma-chrome-launcher": "^1.0.1",
-    "karma": "^1.1.1",
-    "karma-jasmine": "^1.0.2",
-    "karma-phantomjs-launcher": "^1.0.1",
-    "karma-sourcemap-loader": "^  0.3.7",
-    "karma-spec-reporter": "0.0.26",
-    "karma-webpack": "^1.7.0"
   }
 }
