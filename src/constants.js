@@ -1,0 +1,1 @@
+export const RedirectUri = 'http://localhost/spotify-discovery-3d/dist/'

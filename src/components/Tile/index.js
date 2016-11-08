@@ -11,7 +11,7 @@ export default class Tile extends Component {
     return (
       <Entity
         onClick={this.click}
-        geometry={{primitive: 'box', width: 1, height: 1, depth: 0.1}}
+        geometry={{primitive: 'box'}}
         material={{src: `url(${img})`}}
         position={position}
       />

@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import styles from './index.css'
 
-import 'aframe'
-import 'aframe-text-component'
 import { Scene, Entity } from 'aframe-react'
 
 import Sky from '../Sky'
 import Tile from '../Tile'
 import Text from '../Text'
+import Cursor from '../Cursor'
+import SpotifyAuth from '../SpotifyAuth'
 
 import catPath from '../../images/cat.png'
 
@@ -16,14 +16,16 @@ import catPath from '../../images/cat.png'
 export default class App extends Component {
   render() {
     return (
-      <Scene>
-        <Entity primitive="a-camera">
-          <Entity primitive="a-cursor"></Entity>
-        </Entity>
-        <Sky />
-        <Tile img={catPath} position={[2, 1, -3]} />
-        <Text text="Tremendous!" />
-      </Scene>
+      <SpotifyAuth>
+        <Scene>
+          <Entity primitive="a-camera">
+            <Cursor />
+          </Entity>
+          <Sky />
+          <Tile img={catPath} position={[0.5, 1.5, -1.5]} />
+          <Text text="Tremendous!" />
+        </Scene>
+      </SpotifyAuth>
     )
   }
 }

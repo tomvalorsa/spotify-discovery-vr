@@ -1,3 +1,5 @@
+require('dotenv').config({silent:true})
+var webpack = require('webpack')
 var copy = require('copy-webpack-plugin')
 var path = require('path')
 
@@ -36,7 +38,12 @@ module.exports = {
     new copy([
       {from: 'src/index.html'},
       {from: 'node_modules/leaflet/dist/images', to: 'leaflet-images'}
-    ])
+    ]),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'CLIENT_ID': JSON.stringify(process.env.CLIENT_ID)
+      }
+    })
   ],
   postcss: [
     require('postcss-nested')

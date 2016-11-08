@@ -9,6 +9,7 @@
   "author": "Tom Valorsa (github/tomvalorsa)",
   "dependencies": {
     "aframe": "^0.3.2",
+    "aframe-animation-component": "^3.0.4",
     "aframe-bmfont-text-component": "^0.1.4",
     "aframe-react": "^3.4.0",
     "aframe-text-component": "^0.3.0",
@@ -25,6 +26,7 @@
     "babel-runtime": "^6.9.2",
     "copy-webpack-plugin": "^3.0.1",
     "css-loader": "^0.23.1",
+    "dotenv": "^2.0.0",
     "file-loader": "^0.9.0",
     "get-root": "0.0.2",
     "html-webpack-plugin": "^2.21.0",
@@ -43,6 +45,7 @@
     "redux-thunk": "^2.1.0",
     "reselect": "^2.5.3",
     "roboto-fontface": "^0.5.0",
+    "spotify-web-api-js": "^0.21.1",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1",
     "webpack-dev-middleware": "^1.6.1",
