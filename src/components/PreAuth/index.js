@@ -6,8 +6,20 @@ export default class PreAuth extends Component {
     let { redirectToAuth } = this.props
 
     return (
-      <div className={styles.authContainer}>
-        <button onClick={redirectToAuth}>Auth me</button>
+      <div className={styles.container}>
+        <div className={styles.centreWrap}>
+          <h1>Spotfiy Discovery 3D</h1>
+          <p>Discover new music in WebVR</p>
+
+          <div className={styles.buttonWrap}>
+            <button className={styles.primary} onClick={redirectToAuth}>GET STARTED</button>
+            <button>ABOUT</button>
+          </div>
+        </div>
+
+        <p className={styles.madeWith}>
+          Made with ♥ by <a href="https://github.com/tomvalorsa">Tom Valorsa</a>
+        </p>
       </div>
     )
   }

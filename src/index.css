@@ -1,5 +1,6 @@
 @import "normalize.css";
 @import "roboto-fontface";
+@import url('https://fonts.googleapis.com/css?family=Heebo:400,900');
 
 * {
   box-sizing: border-box;
