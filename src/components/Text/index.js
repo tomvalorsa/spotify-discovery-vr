@@ -1,11 +1,11 @@
 import React from 'react'
 import { Entity } from 'aframe-react'
 
-const Text = ({text}) => (
+const Text = ({text, color}) => (
   <Entity
-    text={{text: "Tremendous!"}}
-    material={{color: '#000'}}
-    position={[0, 1, -2]}
+    text={{text}}
+    material={{color}}
+    position={[-2, 1, -2]}
   />
 )
 
