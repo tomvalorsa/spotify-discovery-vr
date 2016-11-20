@@ -5,20 +5,26 @@ import _ from 'lodash'
 import { Scene, Entity } from 'aframe-react'
 
 import Sky from '../Sky'
-import Tile from '../Tile'
 import Text from '../Text'
 import Cursor from '../Cursor'
 
+import Tile from '../../connected/Tile'
+import Music from '../../connected/Music'
+
 import catPath from '../../images/cat.png'
+import skyPath from '../../images/sky.jpg'
 
 // TODO: split everything into its own component to allow greater flexibility with options/props
+// - get user's country on login and save to redux state
+// - make this a connected component!
 
 export default class App extends Component {
   static contextTypes = {
-    SpotifyApi: PropTypes.object.isRequired
+    SpotifyApi: PropTypes.object.isRequired,
+    clearUserInfo: PropTypes.func
   }
   state = {
-    username: undefined
+    topArtists: []
   }
   componentDidMount() {
     let { SpotifyApi } = this.context
@@ -26,24 +32,42 @@ export default class App extends Component {
     SpotifyApi.getMyTopArtists()
       .then(data => {
         // will probs need to filter out comedians too
-        let genres = _.uniq(_.flatten(data.items.map(d => d.genres)))
-        // display these all around the user as there will generally be lots of them
-        // shapes with text on them
-        // how to spread out shapes?
-        debugger
+        // let genres = _.uniq(_.flatten(data.items.map(d => d.genres)))
+        this.setState({topArtists: data.items.slice(0, 10)})
       })
       .catch(err => console.log(err))
   }
   render() {
-    let { username } = this.state
+    let { topArtists } = this.state
+
+    let padding = 5
+    let thetaLength = (360 / topArtists.length) - padding
+    let thetaStart = 0
 
     return (
       <Scene>
         <Entity primitive="a-camera">
           <Cursor />
         </Entity>
-        <Sky />
-        <Tile img={catPath} position={[0.5, 1.5, -1.5]} />
+        <Sky img={skyPath} />
+
+        <Music />
+
+        <Entity position={[0, 1.5, 0]}>
+          {topArtists.map((artist, i) => {
+            const img = artist.images && artist.images[0].url
+            const thetaStart = i * (thetaLength + padding)
+            return (
+              <Tile
+                key={artist.id}
+                artist={artist}
+                img={img || catPath}
+                thetaLength={thetaLength}
+                thetaStart={thetaStart}
+              />
+            )
+          })}
+        </Entity>
         {/*username ? <Text text={`Welcome, ${username}!`} /> : null*/}
       </Scene>
     )

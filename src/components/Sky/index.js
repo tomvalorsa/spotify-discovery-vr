@@ -1,10 +1,10 @@
 import React from 'react'
 import { Entity } from 'aframe-react'
 
-const Sky = (props) => (
+const Sky = ({img}) => (
   <Entity
     geometry={{primitive: 'sphere', radius: 100}}
-    material={{shader: 'flat', color: '#1976d2'}}
+    material={{shader: 'flat', src: `url(${img})`}}
     scale="1 1 -1"
   />
 )

@@ -3,12 +3,12 @@ import SpotifyWebApi from 'spotify-web-api-js'
 import randomstring from 'randomstring'
 
 // TODO:
-  // - add a logout function of some sort
-  // - force user to see preAuth component each time so they have to do login (it will be automatic if token is still valid...I think, otherwise they'll see login prompt)
+  // - think about how this would work without a preauth component as well
 
 export default class SpotifyAuth extends Component {
   static childContextTypes = {
-    SpotifyApi: PropTypes.object
+    SpotifyApi: PropTypes.object,
+    clearUserInfo: PropTypes.func
   }
   state =  {
     authed: false,
@@ -16,27 +16,32 @@ export default class SpotifyAuth extends Component {
   }
   getChildContext() {
     return {
-      SpotifyApi: this.state.client
+      SpotifyApi: this.state.client,
+      clearUserInfo: this.clearUserInfo
     }
   }
   componentDidMount() {
     this.checkIfAuthed()
   }
   checkIfAuthed() {
-    // TODO: add this back in once there is a way to check if local token is valid.
-    // Or do we even want to do this? Do we want user to see preAuth every time they hit the site?
+    // N.B. currently we want the user to see the preAuth component every time
+    // we can extend this in future to allow for pass through if we want them to be able to skip it if they have a valid token
 
     // Look in localStorage for a valid token
-    // let localToken = localStorage.getItem('spotify_token')
-    // let tokenIsValid = +localStorage.getItem('spotify_token_expiry') > Date.now()
-    // if (localToken && tokenIsValid) {
-    //   this.createClient()
-    // }
+    let validLocalToken = this.getTokenFromLocalStorage()
+    if (validLocalToken) {
+      this.createClient()
+    }
 
     // Look in url for token
     if (window.location.hash) {
       this.getTokenFromURL()
     }
+  }
+  getTokenFromLocalStorage() {
+    let localToken = localStorage.getItem('spotify_token')
+    let tokenIsValid = +localStorage.getItem('spotify_token_expiry') > Date.now()
+    return localToken && tokenIsValid
   }
   getTokenFromURL() {
     let params = {}
@@ -78,6 +83,12 @@ export default class SpotifyAuth extends Component {
       state = randomstring.generate()
     } = this.props
 
+    // Check for valid local token before making user auth request
+    let validLocalToken = this.getTokenFromLocalStorage()
+    if (validLocalToken) {
+       return this.createClient()
+    }
+
     // Hold onto this to verify incoming token
     localStorage.setItem('spotify_state', state)
 
@@ -89,6 +100,10 @@ export default class SpotifyAuth extends Component {
       + `state=${state}`
 
     window.location = path
+  }
+  clearUserInfo = () => {
+    localStorage.removeItem('spotify_token')
+    localStorage.removeItem('spotify_token_expiry')
   }
   render() {
     let { authed, client } = this.state
