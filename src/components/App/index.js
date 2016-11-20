@@ -43,7 +43,7 @@ export default class App extends Component {
           <Cursor />
         </Entity>
         <Sky />
-        {/*<Tile img={catPath} position={[0.5, 1.5, -1.5]} />*/}
+        <Tile img={catPath} position={[0.5, 1.5, -1.5]} />
         {/*username ? <Text text={`Welcome, ${username}!`} /> : null*/}
       </Scene>
     )
