@@ -4,7 +4,7 @@ import { Entity } from 'aframe-react'
 export default class Cursor extends Component {
   render() {
     return (
-      <Entity primitive="a-cursor" fuse="true">
+      <Entity primitive="a-cursor" fuse="true" material="color: red">
         <a-animation
           begin="cursor-fusing"
           easing="ease-in"
