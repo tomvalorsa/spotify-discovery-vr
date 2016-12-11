@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Entity } from 'aframe-react'
-
 import CurvedTile from '../../connected/CurvedTile'
 
 export default class ArtistRing extends Component {
@@ -13,8 +12,6 @@ export default class ArtistRing extends Component {
       const padding = (360 - (artists.length * 30)) / artists.length
 
       tiles = artists.map((artist, i) => {
-        // SET IMG DEFAULT IN TILE COMPONENT
-
         return (
           <CurvedTile
             key={artist.id}
