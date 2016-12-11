@@ -11,7 +11,7 @@ const Floor = ({img, height = 100, width = 100}) => {
   const material = {
     shader: 'flat',
     src: `url(${img})`,
-    repeat: '300 300'
+    repeat: '100 100'
   }
 
   return (

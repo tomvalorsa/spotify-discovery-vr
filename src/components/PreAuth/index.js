@@ -8,7 +8,7 @@ export default class PreAuth extends Component {
     return (
       <div className={styles.container}>
         <div className={styles.centreWrap}>
-          <h1>Spotfiy Discovery 3D</h1>
+          <h1>Spotfiy Discovery VR</h1>
           <p>Discover new music in WebVR</p>
 
           <div className={styles.buttonWrap}>

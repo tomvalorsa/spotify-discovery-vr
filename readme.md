@@ -1,1 +1,1 @@
-# Spotify Discovery 3D
+# Spotify Discovery VR

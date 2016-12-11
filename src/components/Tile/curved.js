@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { Entity } from 'aframe-react'
+import defaultImg from '../../images/cat.png'
 
 export class CurvedTile extends Component {
   static contextTypes = {
@@ -34,7 +35,7 @@ export class CurvedTile extends Component {
     }
 
     const material = {
-      src: `url(${img})`,
+      src: `url(${img || defaultImg})`,
       side: 'double'
     }
 
