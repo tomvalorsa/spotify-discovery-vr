@@ -6,6 +6,7 @@ import _ from 'lodash'
 import { Scene, Entity } from 'aframe-react'
 
 import Sky from '../components/Sky'
+import Roof from '../components/Roof'
 import Floor from '../components/Floor'
 import Text from '../components/Text'
 import Cursor from '../components/Cursor'
@@ -21,6 +22,8 @@ import skyPath from '../images/sky.jpg'
 import floor1 from '../images/floor1.jpg'
 import floor2 from '../images/floor2.jpg'
 import floor3 from '../images/floor3.jpg'
+import wall1 from '../images/wall1.jpg'
+import wall2 from '../images/wall2.jpg'
 
 // TODO: split everything into its own component to allow greater flexibility with options/props
 // - get user's country on login and save to redux state
@@ -59,35 +62,21 @@ class App extends Component {
         </Entity>
         <Sky img={skyPath} />
         <Floor img={floor3} />
+        <Roof />
 
         <Entity
           color="cyan"
           segments-radial="8"
-          geometry="primitive:cylinder;height:2;openEnded:true;radius:3;segmentsRadial:360"
-          material="flatShading:true;color:#528edc;side:double"
+          geometry="primitive:cylinder;height:3;openEnded:true;radius:3;segmentsRadial:36"
+          material={`color:#C3AE8F;side:double;src:url(${wall2});repeat:60 10;`}
           position="0 1.5 0"
         />
 
-
+        {/*<a-light type="point" color="blue" position="0 5 0"></a-light>*/}
 
         <Music />
         {/*<Label />*/}
         <ArtistRing position={[0, 1.5, 0]} artists={topArtists} />
-        {/*<Entity position={[0, 1.5, 0]}>
-          {topArtists.map((artist, i) => {
-            const img = artist.images && artist.images[0].url
-            const thetaStart = i * (thetaLength + padding)
-            return (
-              <CurvedTile
-                key={artist.id}
-                artist={artist}
-                img={img || catPath}
-                thetaLength={thetaLength}
-                thetaStart={thetaStart}
-              />
-            )
-          })}
-        </Entity>*/}
         {/*username ? <Text text={`Welcome, ${username}!`} /> : null*/}
       </Scene>
     )

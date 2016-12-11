@@ -1,17 +1,16 @@
 import React from 'react'
 import { Entity } from 'aframe-react'
 
-const Floor = ({img, height = 100, width = 100}) => {
+const Floor = ({img}) => {
   const geometry = {
-    primitive: 'plane',
-    height,
-    width
+    primitive: 'circle',
+    radius: 3.1
   }
 
   const material = {
     shader: 'flat',
     src: `url(${img})`,
-    repeat: '100 100'
+    repeat: '4 4'
   }
 
   return (

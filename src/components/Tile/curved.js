@@ -29,9 +29,10 @@ export class CurvedTile extends Component {
     const geometry = {
       primitive: 'cylinder',
       openEnded: true,
+      radius: 2.5,
       thetaLength: thetaLength,
       thetaStart: thetaStart,
-      height: 0.5
+      height: 1
     }
 
     const material = {
@@ -39,10 +40,10 @@ export class CurvedTile extends Component {
       side: 'double'
     }
 
+        // onClick={() => setTrack(track)}
     return (
       <Entity
         ref="tile"
-        onClick={() => setTrack(track)}
         material={material}
         geometry={geometry}
       />
