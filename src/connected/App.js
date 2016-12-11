@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import styles from './index.css'
 import { connect } from 'react-redux'
 import _ from 'lodash'
+import { setArtists } from 'actions/artists'
 
 import { Scene, Entity } from 'aframe-react'
 
@@ -11,11 +12,9 @@ import Floor from '../components/Floor'
 import Text from '../components/Text'
 import Cursor from '../components/Cursor'
 import Label from '../components/Label'
-import ArtistRing from '../components/ArtistRing'
 import Walls from '../components/Walls'
 
-import CurvedTile from './CurvedTile'
-import FlatTile from './FlatTile'
+import ArtistRing from './ArtistRing'
 import Music from './Music'
 
 
@@ -24,23 +23,19 @@ class App extends Component {
     SpotifyApi: PropTypes.object.isRequired,
     clearUserInfo: PropTypes.func
   }
-  state = {
-    topArtists: []
-  }
   componentDidMount() {
     let { SpotifyApi } = this.context
+    let { setArtists } = this.props
 
+    // Set the initial step in flow of music discovery
     SpotifyApi.getMyTopArtists()
       .then(data => {
-        // will probs need to filter out comedians too
-        // let genres = _.uniq(_.flatten(data.items.map(d => d.genres)))
-        this.setState({topArtists: data.items.slice(0, 10)})
+        let topArtists = data.items.filter(d => d.genres.indexOf('comedy') === -1)
+        setArtists(topArtists.slice(0, 10))
       })
       .catch(err => console.log(err))
   }
   render() {
-    let { topArtists } = this.state
-
     return (
       <Scene>
         <Entity primitive="a-camera">
@@ -54,12 +49,12 @@ class App extends Component {
 
         <Music />
         {/*<Label />*/}
-        <ArtistRing position={[0, 1.5, 0]} artists={topArtists} />
+        <ArtistRing position={[0, 1.5, 0]} />
         {/*username ? <Text text={`Welcome, ${username}!`} /> : null*/}
       </Scene>
     )
   }
 }
 
-export default connect(state => ({test: state.app}))(App)
+export default connect(state => ({test: state.app, artists: state.artists}), {setArtists})(App)
 
