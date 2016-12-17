@@ -1,33 +1,33 @@
 import Control from '../components/Control'
 import { connect } from 'react-redux'
 import { ControlIcons } from 'constants'
-// setPlayPause
-// skipPrevious
-// skipNext
-// selectRelatedArtists
-// addToPlaylist
+import {
+  togglePaused,
+  setArtistInfo,
+  skipNext,
+  skipPrevious
+} from 'actions/playback'
 
-export const PlayPause = connect(state => {
-  // or similar for state, need to work out
-  // state.paused ? ControlIcons.pause : ControlIcons.play
+export const PlayPause = connect((state, props) => {
   return {
-    img: ControlIcons.play
+    img: state.playback.paused ? ControlIcons.play : ControlIcons.pause,
+    selectedArtist: state.playback.artist
   }
-})(Control)
+}, { togglePaused, setArtistInfo })(Control)
 
 
 export const Previous = connect(state => {
   return {
     img: ControlIcons.previous
   }
-})(Control)
+}, { click: skipPrevious })(Control)
 
 
 export const Next = connect(state => {
   return {
     img: ControlIcons.next
   }
-})(Control)
+}, { click: skipNext })(Control)
 
 
 export const RelatedArtists = connect(state => {

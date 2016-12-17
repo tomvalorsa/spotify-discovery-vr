@@ -19,6 +19,7 @@ const Control = ({ thetaStart, click, img }) => {
 
   return (
     <Entity
+      onClick={click}
       material={material}
       geometry={geometry}
     />

@@ -3,10 +3,11 @@ import { Entity } from 'aframe-react'
 import { ControlIcons } from 'constants'
 import Control from './Control'
 
-const Controls = ({ artistThetaStart, children }) => {
+const Controls = ({ artistThetaStart, artist, children }) => {
   let positionedChildren = Children.map(children, (child, i) => {
     return cloneElement((child), {
-      thetaStart: artistThetaStart + ((5 * i) + i)
+      thetaStart: artistThetaStart + ((5 * i) + i),
+      artist
     })
   })
 

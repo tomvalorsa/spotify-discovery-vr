@@ -23,8 +23,8 @@ class App extends Component {
     clearUserInfo: PropTypes.func
   }
   componentDidMount() {
-    let { SpotifyApi } = this.context
-    let { setArtists } = this.props
+    const { SpotifyApi } = this.context
+    const { setArtists } = this.props
 
     // Set the initial step in flow of music discovery
     SpotifyApi.getMyTopArtists()
