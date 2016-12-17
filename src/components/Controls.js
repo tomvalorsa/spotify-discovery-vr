@@ -37,7 +37,7 @@ class Control extends Component {
 
     const material = {
       src: `url(${ControlIcons[type]})`,
-      side: 'double',
+      side: 'back',
       repeat: '-1 1'
     }
 

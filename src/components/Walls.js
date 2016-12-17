@@ -12,7 +12,7 @@ const Walls = () => {
   }
 
   const material = {
-    side: 'double',
+    side: 'back',
     src: `url(${Textures.wall})`,
     repeat: '60 10'
   }

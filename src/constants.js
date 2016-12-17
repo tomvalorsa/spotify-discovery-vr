@@ -1,5 +1,6 @@
 export const RedirectUri = 'http://localhost/spotify-discovery-vr/dist/'
 
+// Google Material Icon Font
 export const ControlIcons = {
   play: require('./images/play.png'),
   pause: require('./images/pause.png'),

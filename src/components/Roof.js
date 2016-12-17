@@ -13,7 +13,7 @@ const Roof = () => {
   const material = {
     flatShading: true,
     opacity: 0.8,
-    side: 'double',
+    side: 'back',
     color: '#ffffff'
   }
 
