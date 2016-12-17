@@ -1,5 +1,15 @@
 export const RedirectUri = 'http://localhost/spotify-discovery-vr/dist/'
 
+export const ControlIcons = {
+  play: require('./images/play.png'),
+  pause: require('./images/pause.png'),
+  next: require('./images/next.png'),
+  previous: require('./images/previous.png'),
+  relatedArtists: require('./images/related.png'),
+  add: require('./images/add.png'),
+  added: require('./images/added.png')
+}
+
 export const Textures = {
   floor: require('./images/floor.jpg'),
   wall: require('./images/wall.jpg'),

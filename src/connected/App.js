@@ -9,10 +9,9 @@ import { Scene, Entity } from 'aframe-react'
 import Sky from '../components/Sky'
 import Roof from '../components/Roof'
 import Floor from '../components/Floor'
-import Text from '../components/Text'
 import Cursor from '../components/Cursor'
-import Label from '../components/Label'
 import Walls from '../components/Walls'
+import Controls from '../components/Controls'
 
 import ArtistRing from './ArtistRing'
 import Music from './Music'
@@ -48,9 +47,7 @@ class App extends Component {
         <Walls />
 
         <Music />
-        {/*<Label />*/}
         <ArtistRing position={[0, 1.5, 0]} />
-        {/*username ? <Text text={`Welcome, ${username}!`} /> : null*/}
       </Scene>
     )
   }

@@ -37,7 +37,8 @@ export class CurvedTile extends Component {
 
     const material = {
       src: `url(${img || defaultImg})`,
-      side: 'double'
+      side: 'double', // might be unnecessary
+      repeat: '-1 1'
     }
 
         // onClick={() => setTrack(track)}

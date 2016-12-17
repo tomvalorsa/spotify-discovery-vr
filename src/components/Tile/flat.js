@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { Entity } from 'aframe-react'
+import defaultImg from '../../images/cat.png'
 
 export class FlatTile extends Component {
   static contextTypes = {
@@ -20,7 +21,7 @@ export class FlatTile extends Component {
     // also need to manage what is playing in state
   }
   render() {
-    let { img, position, setTrack, clearTrack } = this.props
+    let { img, setTrack, clearTrack } = this.props
     let { track } = this.state
 
     if (!track) return null
@@ -32,16 +33,15 @@ export class FlatTile extends Component {
     }
 
     const material = {
-      src: `url(${img})`
+      src: `url(${img || defaultImg})`
     }
 
+        // onClick={() => setTrack(track)}
     return (
       <Entity
         ref="tile"
-        onClick={() => setTrack(track)}
         material={material}
         geometry={geometry}
-        position={position}
       />
     )
   }
