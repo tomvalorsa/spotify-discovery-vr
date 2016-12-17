@@ -1,39 +1,47 @@
-// import Control from '../components/Control'
-// import { connect } from 'react-redux'
+import Control from '../components/Control'
+import { connect } from 'react-redux'
+import { ControlIcons } from 'constants'
+// setPlayPause
+// skipPrevious
+// skipNext
+// selectRelatedArtists
+// addToPlaylist
 
-// export const PlayPause = connect(state => {
-//   // or similar for state, need to work out
-//   return {
-//     image: state.paused ? ControlIcons.pause : ControlIcons.play
-//   }
-// }, { click: setPlayPause })(Control)
-
-
-// export const Previous = connect(state => {
-//   return {
-//     image: ControlIcons.previous
-//   }
-// }, { click: skipPrevious })(Control)
-
-
-// export const Next = connect(state => {
-//   return {
-//     image: ControlIcons.next
-//   }
-// }, { click: skipNext })(Control)
+export const PlayPause = connect(state => {
+  // or similar for state, need to work out
+  // state.paused ? ControlIcons.pause : ControlIcons.play
+  return {
+    img: ControlIcons.play
+  }
+})(Control)
 
 
-// export const RelatedArtists = connect(state => {
-//   return {
-//     image: ControlIcons.RelatedArtists
-//   }
-// }, { click: selectRelatedArtists })(Control)
+export const Previous = connect(state => {
+  return {
+    img: ControlIcons.previous
+  }
+})(Control)
 
 
-// export const AddToPlaylist = connect(state => {
-//   let added
+export const Next = connect(state => {
+  return {
+    img: ControlIcons.next
+  }
+})(Control)
 
-//   return {
-//     image: added ? ControlIcons.added : ControlIcons.add
-//   }
-// }, { click: addToPlaylist })(Control)
+
+export const RelatedArtists = connect(state => {
+  return {
+    img: ControlIcons.relatedArtists
+  }
+})(Control)
+
+
+export const AddToPlaylist = connect(state => {
+  // let added
+  // added ? ControlIcons.added : ControlIcons.add
+
+  return {
+    img: ControlIcons.add
+  }
+})(Control)

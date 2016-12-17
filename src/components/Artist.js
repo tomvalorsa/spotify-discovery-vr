@@ -2,6 +2,13 @@ import React from 'react'
 import { Entity } from 'aframe-react'
 import ArtistTile from './ArtistTile'
 import Controls from './Controls'
+import {
+  PlayPause,
+  Previous,
+  Next,
+  RelatedArtists,
+  AddToPlaylist
+} from '../connected/Controls'
 
 const Artist = ({ artist, thetaLength, thetaStart }) => (
   <Entity>
@@ -11,11 +18,13 @@ const Artist = ({ artist, thetaLength, thetaStart }) => (
       thetaLength={thetaLength}
       thetaStart={thetaStart}
     />
-    <Controls
-      artist={artist}
-      artistStart={thetaStart}
-      thetaLength={thetaLength}
-    />
+    <Controls artist={artist} artistThetaStart={thetaStart}>
+      <RelatedArtists />
+      <AddToPlaylist />
+      <Next />
+      <PlayPause />
+      <Previous />
+    </Controls>
   </Entity>
 )
 
