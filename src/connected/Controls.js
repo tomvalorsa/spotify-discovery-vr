@@ -1,6 +1,8 @@
 import Control from '../components/Control'
+import _RelatedArtists from '../components/RelatedArtists'
 import { connect } from 'react-redux'
 import { ControlIcons } from 'constants'
+import { setArtists } from 'actions/artists'
 import { setPlaylistEntry } from 'actions/playlist'
 import {
   togglePaused,
@@ -41,7 +43,7 @@ export const RelatedArtists = connect(state => {
   return {
     img: ControlIcons.relatedArtists
   }
-}, { click: () => console.log('clicked') })(Control)
+}, { setArtists, togglePaused })(_RelatedArtists)
 
 export const AddToPlaylist = connect(state => {
   const { playlist, playback } = state

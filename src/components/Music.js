@@ -17,6 +17,8 @@ export default class Music extends Component {
     // TODO: investigate below
     // might need to look into play/stop instead of pause for initial ver
 
+    // look into new api ver and update https://aframe.io/docs/0.4.0/components/sound.html
+
     // below might not be necessary with autoplay sound attr in render
 
     // no prev track, now we have one PLAY
