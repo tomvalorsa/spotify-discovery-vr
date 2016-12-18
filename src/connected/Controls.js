@@ -1,4 +1,5 @@
 import Control from '../components/Control'
+import _PlayPause from '../components/PlayPause'
 import { connect } from 'react-redux'
 import { ControlIcons } from 'constants'
 import {
@@ -8,12 +9,12 @@ import {
   skipPrevious
 } from 'actions/playback'
 
-export const PlayPause = connect((state, props) => {
+export const PlayPause = connect(state => {
   return {
     img: state.playback.paused ? ControlIcons.play : ControlIcons.pause,
     selectedArtist: state.playback.artist
   }
-}, { togglePaused, setArtistInfo })(Control)
+}, { togglePaused, setArtistInfo })(_PlayPause)
 
 
 export const Previous = connect(state => {
@@ -34,7 +35,7 @@ export const RelatedArtists = connect(state => {
   return {
     img: ControlIcons.relatedArtists
   }
-})(Control)
+}, { click: () => console.log('clicked') })(Control)
 
 
 export const AddToPlaylist = connect(state => {
@@ -44,4 +45,4 @@ export const AddToPlaylist = connect(state => {
   return {
     img: ControlIcons.add
   }
-})(Control)
+}, { click: () => console.log('clicked') })(Control)

@@ -5,10 +5,10 @@ import {
   SKIP_PREVIOUS
 } from 'actionTypes'
 
-export const setArtistInfo = () => (dispatch, getState) => {
-
-  // spotify api stuff? do this here or in component??
-}
+export const setArtistInfo = (artist, topTracks) => ({
+  type: SET_ARTIST_INFO,
+  payload: { artist, topTracks }
+})
 
 export const togglePaused = () => ({
   type: TOGGLE_PAUSED

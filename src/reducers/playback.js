@@ -8,22 +8,22 @@ import {
 const initialState = {
   artist: null,
   track: null,
-  top10: [],
+  topTracks: [],
   paused: true
 }
 
 export default function(state = initialState, { type, payload }) {
-  let currentIdx = state.track && state.top10.indexOf(state.track)
+  let currentIdx = state.track && state.topTracks.indexOf(state.track)
 
   switch(type) {
     case SET_ARTIST_INFO:
-      let { artist, top10 } = payload
+      let { artist, topTracks } = payload
 
       return {
         ...state,
         artist,
-        top10,
-        track: top10[0],
+        topTracks,
+        track: topTracks[0],
         paused: true
       }
     case TOGGLE_PAUSED:
@@ -34,21 +34,21 @@ export default function(state = initialState, { type, payload }) {
     case SKIP_NEXT:
       if (!state.artist) return state
 
-      let nextIdx = (currentIdx + 1) % 10
+      let nextIdx = (currentIdx + 1) % state.topTracks.length
 
       return {
         ...state,
-        track: state.top10[nextIdx],
+        track: state.topTracks[nextIdx],
         paused: false
       }
     case SKIP_PREVIOUS:
       if (!state.artist) return state
 
-      let prevIdx = currentIdx - 1 < 0 ? 10 : currentIdx - 1
+      let prevIdx = currentIdx - 1 < 0 ? state.topTracks.length - 1 : currentIdx - 1
 
       return {
         ...state,
-        track: state.top10[prevIdx],
+        track: state.topTracks[prevIdx],
         paused: false
       }
     default:

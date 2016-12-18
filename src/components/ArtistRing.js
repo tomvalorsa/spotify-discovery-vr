@@ -5,7 +5,7 @@ import Artist from './Artist'
 const ArtistRing = ({ position, artists }) => {
   let tiles = []
 
-  if (artists) {
+  if (artists.length) {
     const thetaLength = 29
     const padding = (360 - (artists.length * 29)) / artists.length
 

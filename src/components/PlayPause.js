@@ -1,25 +1,27 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { Entity } from 'aframe-react'
 
-export default class PlayPause extends Compoennt {
+export default class PlayPause extends Component {
   static contextTypes = {
     SpotifyApi: PropTypes.object.isRequired,
   }
   handleClick = () => {
+    console.log('clicked')
     const { artist, togglePaused, setArtistInfo, selectedArtist } = this.props
     const { SpotifyApi } = this.context
 
     if (selectedArtist === artist.id) {
-      return togglePaused
+      return togglePaused()
     }
 
-    // otherwise do spotify api calls and fire artist info action
-    // OR send spotify client to action to make calls...?
-
-    setArtistInfo(artist)
+    SpotifyApi.getArtistTopTracks(artist.id, 'AU')
+      .then(result => {
+        setArtistInfo(artist.id, result.tracks)
+      })
+      .catch(err => console.log(err))
   }
   render() {
-    const { thetaStart, click, img } = this.props
+    const { thetaStart, img } = this.props
 
     const material = {
       src: `url(${img})`,
@@ -45,5 +47,3 @@ export default class PlayPause extends Compoennt {
     )
   }
 }
-
-export default Control

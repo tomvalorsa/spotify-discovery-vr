@@ -23,8 +23,8 @@ class App extends Component {
     clearUserInfo: PropTypes.func
   }
   componentDidMount() {
-    const { SpotifyApi } = this.context
-    const { setArtists } = this.props
+    let { SpotifyApi } = this.context
+    let { setArtists } = this.props
 
     // Set the initial step in flow of music discovery
     SpotifyApi.getMyTopArtists()
@@ -41,17 +41,22 @@ class App extends Component {
           <Cursor />
         </Entity>
 
+        <Music />
+
         <Sky />
         <Floor />
         <Roof />
         <Walls />
 
-        <Music />
         <ArtistRing position={[0, 1.5, 0]} />
       </Scene>
     )
   }
 }
 
-export default connect(state => ({test: state.app, artists: state.artists}), {setArtists})(App)
-
+export default connect(state => {
+  return {
+    test: state.app,
+    artists: state.artists
+  }
+}, { setArtists })(App)
