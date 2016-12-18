@@ -47,7 +47,7 @@ export const RelatedArtists = connect(state => {
 
 export const AddToPlaylist = connect(state => {
   const { playlist, playback } = state
-  const added = playlist.indexOf(playback.track) > -1
+  const added = playlist.indexOf(playback.track.uri) > -1
 
   return {
     img: added ? ControlIcons.added : ControlIcons.add

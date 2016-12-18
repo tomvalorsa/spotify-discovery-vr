@@ -95,7 +95,7 @@ export default class SpotifyAuth extends Component {
     let path = 'https://accounts.spotify.com/authorize?'
       + `client_id=${clientID}&`
       + `redirect_uri=${redirectURI}&`
-      + `scope=${scope}&`
+      + `scope=${encodeURIComponent(scope.join(' '))}&`
       + `response_type=${responseType}&`
       + `state=${state}`
 

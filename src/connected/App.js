@@ -15,6 +15,7 @@ import Controls from '../components/Controls'
 
 import ArtistRing from './ArtistRing'
 import Music from './Music'
+import Exit from './Exit'
 
 
 class App extends Component {
@@ -47,6 +48,8 @@ class App extends Component {
         <Floor />
         <Roof />
         <Walls />
+
+        <Exit />
 
         <ArtistRing position={[0, 1.5, 0]} />
       </Scene>

@@ -33,7 +33,7 @@ render(
       preAuth={PreAuth}
       redirectURI={RedirectUri}
       clientID={process.env.CLIENT_ID}
-      scope={['user-top-read']}
+      scope={['user-top-read', 'playlist-modify-public']}
     >
       <App />
     </SpotifyAuth>
