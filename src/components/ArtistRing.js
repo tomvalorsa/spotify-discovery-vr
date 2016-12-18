@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Entity } from 'aframe-react'
-import Artist from './Artist'
+import Artist from '../connected/Artist'
 
 const ArtistRing = ({ position, artists }) => {
   let tiles = []

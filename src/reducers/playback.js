@@ -24,7 +24,7 @@ export default function(state = initialState, { type, payload }) {
         artist,
         topTracks,
         track: topTracks[0],
-        paused: true
+        paused: false
       }
     case TOGGLE_PAUSED:
       return {
