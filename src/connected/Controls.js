@@ -1,6 +1,7 @@
 import Control from '../components/Control'
 import { connect } from 'react-redux'
 import { ControlIcons } from 'constants'
+import { setPlaylistEntry } from 'actions/playlist'
 import {
   togglePaused,
   setArtistInfo,
@@ -42,12 +43,11 @@ export const RelatedArtists = connect(state => {
   }
 }, { click: () => console.log('clicked') })(Control)
 
-
 export const AddToPlaylist = connect(state => {
-  // let added
-  // added ? ControlIcons.added : ControlIcons.add
+  const { playlist, playback } = state
+  const added = playlist.indexOf(playback.track) > -1
 
   return {
-    img: ControlIcons.add
+    img: added ? ControlIcons.added : ControlIcons.add
   }
-}, { click: () => console.log('clicked') })(Control)
+}, { click: setPlaylistEntry })(Control)
