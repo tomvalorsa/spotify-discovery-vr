@@ -1,19 +1,23 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Entity } from 'aframe-react'
 
-export default class Cursor extends Component {
-  render() {
-    return (
-      <Entity primitive="a-cursor" fuse="true" material="color: #4FC3F7">
-        <a-animation
-          begin="cursor-fusing"
-          easing="ease-in"
-          attribute="scale"
-          fill="forwards"
-          from="1 1 1"
-          to="0.1 0.1 0.1"
-        />
-      </Entity>
-    )
-  }
-}
+const Cursor = () => (
+  <Entity primitive="a-cursor" material="color: #4FC3F7">
+    <a-animation
+      begin="mousedown"
+      attribute="material.color"
+      from="#4FC3F7"
+      to="#283593"
+      dur="1"
+    ></a-animation>
+    <a-animation
+      begin="mouseup"
+      attribute="material.color"
+      from="#283593"
+      to="#4FC3F7"
+      dur="1"
+    ></a-animation>
+  </Entity>
+)
+
+export default Cursor
