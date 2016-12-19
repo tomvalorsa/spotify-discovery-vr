@@ -1,6 +1,5 @@
 import React, { Component, Children, cloneElement } from 'react'
 import { Entity } from 'aframe-react'
-import { ControlIcons } from 'constants'
 import Control from './Control'
 
 const Controls = ({ artistThetaStart, artist, children }) => {

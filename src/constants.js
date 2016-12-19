@@ -1,14 +1,17 @@
 export const RedirectUri = 'http://localhost/spotify-discovery-vr/dist/'
 
 // Google Material Icon Font
-export const ControlIcons = {
+export const Icons = {
   play: require('./images/play.png'),
   pause: require('./images/pause.png'),
   next: require('./images/next.png'),
   previous: require('./images/previous.png'),
   relatedArtists: require('./images/related.png'),
   add: require('./images/add.png'),
-  added: require('./images/added.png')
+  added: require('./images/added.png'),
+  save: require('./images/save.png'),
+  inProgress: require('./images/in-progress.png'),
+  done: require('./images/done.png')
 }
 
 export const Textures = {
