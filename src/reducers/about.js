@@ -1,5 +1,5 @@
 import { TOGGLE_ABOUT } from 'actionTypes'
-const initialState = true
+const initialState = false
 
 export default function(state = initialState, { type, payload }) {
   switch(type) {
