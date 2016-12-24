@@ -1,3 +1,6 @@
+// About
+export const TOGGLE_ABOUT = 'TOGGLE_ABOUT'
+
 // Artists
 export const SET_ARTISTS = 'SET_ARTISTS'
 

@@ -10,7 +10,7 @@ import thunk from 'redux-thunk'
 import rootReducer from './reducers'
 import App from './connected/App'
 import SpotifyAuth from './components/SpotifyAuth'
-import PreAuth from './components/PreAuth'
+import PreAuth from './connected/PreAuth'
 
 import AFRAME from 'aframe'
 import 'aframe-text-component'

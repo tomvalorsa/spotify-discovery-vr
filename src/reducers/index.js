@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux'
 
-import app from './app'
+import about from './about'
 import artists from './artists'
 import playback from './playback'
 import playlist from './playlist'
 
 export default combineReducers({
-  app,
+  about,
   artists,
   playback,
   playlist
