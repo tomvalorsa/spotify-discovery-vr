@@ -36,12 +36,12 @@ module.exports = {
   },
   plugins: [
     new copy([
-      {from: 'src/index.html'},
-      {from: 'node_modules/leaflet/dist/images', to: 'leaflet-images'}
+      {from: 'src/index.html'}
     ]),
     new webpack.DefinePlugin({
       'process.env': {
-        'CLIENT_ID': JSON.stringify(process.env.CLIENT_ID)
+        'CLIENT_ID': JSON.stringify(process.env.CLIENT_ID),
+        'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
       }
     })
   ],

@@ -1,7 +1,6 @@
 import Control from '../components/Control'
 import _RelatedArtists from '../components/RelatedArtists'
 import { connect } from 'react-redux'
-import { Icons } from 'constants'
 import { setArtists } from 'actions/artists'
 import { setPlaylistEntry } from 'actions/playlist'
 import {
@@ -15,10 +14,10 @@ export const PlayPause = connect((state, props) => {
   const { artist } = props
   const { playback } = state
 
-  let img = Icons.play
+  let img = '#play'
 
   if (!playback.paused && artist.id === playback.artist) {
-    img = Icons.pause
+    img = '#pause'
   }
 
   return { img }
@@ -27,21 +26,21 @@ export const PlayPause = connect((state, props) => {
 
 export const Previous = connect(state => {
   return {
-    img: Icons.previous
+    img: '#previous'
   }
 }, { click: skipPrevious })(Control)
 
 
 export const Next = connect(state => {
   return {
-    img: Icons.next
+    img: '#next'
   }
 }, { click: skipNext })(Control)
 
 
 export const RelatedArtists = connect(state => {
   return {
-    img: Icons.relatedArtists
+    img: '#relatedArtists'
   }
 }, { setArtists, togglePaused })(_RelatedArtists)
 
@@ -50,6 +49,6 @@ export const AddToPlaylist = connect(state => {
   const added = playlist.indexOf(playback.track.uri) > -1
 
   return {
-    img: added ? Icons.added : Icons.add
+    img: added ? '#added' : '#add'
   }
 }, { click: setPlaylistEntry })(Control)

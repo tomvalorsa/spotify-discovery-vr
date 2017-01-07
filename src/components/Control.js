@@ -3,7 +3,7 @@ import { Entity } from 'aframe-react'
 
 const Control = ({ thetaStart, click, img }) => {
   const material = {
-    src: `url(${img})`,
+    src: img,
     side: 'back',
     repeat: '-1 1'
   }

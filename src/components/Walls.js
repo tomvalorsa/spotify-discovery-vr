@@ -1,6 +1,5 @@
 import React from 'react'
 import { Entity } from 'aframe-react'
-import { Textures } from 'constants'
 
 const Walls = () => {
   const geometry = {
@@ -13,7 +12,7 @@ const Walls = () => {
 
   const material = {
     side: 'back',
-    src: `url(${Textures.wall})`,
+    src: '#wall',
     repeat: '60 10'
   }
 

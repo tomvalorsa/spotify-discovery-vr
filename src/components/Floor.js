@@ -1,6 +1,5 @@
 import React from 'react'
 import { Entity } from 'aframe-react'
-import { Textures } from 'constants'
 
 const Floor = () => {
   const geometry = {
@@ -10,7 +9,7 @@ const Floor = () => {
 
   const material = {
     shader: 'flat',
-    src: `url(${Textures.floor})`,
+    src: '#floor',
     repeat: '4 4'
   }
 

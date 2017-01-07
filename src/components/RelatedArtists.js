@@ -22,7 +22,7 @@ export default class RelatedArtists extends Component {
     const { thetaStart, click, img } = this.props
 
     const material = {
-      src: `url(${img})`,
+      src: img,
       side: 'back',
       repeat: '-1 1'
     }

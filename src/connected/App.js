@@ -6,6 +6,7 @@ import { setArtists } from 'actions/artists'
 
 import { Scene, Entity } from 'aframe-react'
 
+import Assets from '../components/Assets'
 import Sky from '../components/Sky'
 import Roof from '../components/Roof'
 import Floor from '../components/Floor'
@@ -37,7 +38,9 @@ class App extends Component {
   }
   render() {
     return (
-      <Scene>
+      <Scene stats>
+        <Assets />
+
         <Entity primitive="a-camera">
           <Cursor />
         </Entity>

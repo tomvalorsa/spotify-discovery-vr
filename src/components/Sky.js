@@ -1,6 +1,5 @@
 import React from 'react'
 import { Entity } from 'aframe-react'
-import { Textures } from 'constants'
 
 const Sky = () => {
   const geometry = {
@@ -10,7 +9,7 @@ const Sky = () => {
 
   const material = {
     shader: 'flat',
-    src: `url(${Textures.sky})`
+    src: '#sky'
   }
 
   return (

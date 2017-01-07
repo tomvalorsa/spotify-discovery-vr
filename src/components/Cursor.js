@@ -2,7 +2,7 @@ import React from 'react'
 import { Entity } from 'aframe-react'
 
 const Cursor = () => (
-  <Entity primitive="a-cursor" material="color: #4FC3F7">
+  <Entity primitive="a-cursor" cursor="fuse: false" material="color: #4FC3F7">
     <a-animation
       begin="mousedown"
       attribute="material.color"

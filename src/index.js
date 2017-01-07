@@ -13,15 +13,6 @@ import SpotifyAuth from './components/SpotifyAuth'
 import PreAuth from './connected/PreAuth'
 
 import AFRAME from 'aframe'
-import 'aframe-text-component'
-import 'aframe-animation-component'
-
-import draw from 'aframe-draw-component'
-import textwrap from 'aframe-textwrap-component'
-
-// Not working properly? Is being appended to list of components, just not showing...
-AFRAME.registerComponent('draw', draw.component)
-AFRAME.registerComponent('textwrap', textwrap.component)
 
 import './index.css'
 

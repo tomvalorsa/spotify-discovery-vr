@@ -1,4 +1,12 @@
-export const RedirectUri = 'http://localhost/spotify-discovery-vr/dist/'
+const getRedirectUri = () => {
+  if (process.env.NODE_ENV === 'production') {
+    return 'http://tomvalorsa.github.io/'
+  } else {
+    return 'http://localhost/spotify-discovery-vr/dist/'
+  }
+}
+
+export const RedirectUri = getRedirectUri()
 
 // Google Material Icon Font
 export const Icons = {
