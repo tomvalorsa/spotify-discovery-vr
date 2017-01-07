@@ -38,7 +38,7 @@ class App extends Component {
   }
   render() {
     return (
-      <Scene stats>
+      <Scene stats={process.env.NODE_ENV !== 'production'}>
         <Assets />
 
         <Entity primitive="a-camera">

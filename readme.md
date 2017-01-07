@@ -1,5 +1,7 @@
 # Spotify Discovery VR
 
+[Demo](http://tomvalorsa.github.io/)
+
 This is a simple playlist creator for Spotify which allows users to explore music related to their top artists. This is my final project for the fantastic [CS50x](https://www.edx.org/course/introduction-computer-science-harvardx-cs50x). I used the open brief for the final project as an excuse to play with the [A-Frame](https://aframe.io/) WebVR framework.
 
 ## Usage:
