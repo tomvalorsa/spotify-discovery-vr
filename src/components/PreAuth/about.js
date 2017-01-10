@@ -4,7 +4,7 @@ import cls from 'classnames'
 import { Icons } from 'constants'
 
 const About = ({ toggleAbout }) => (
-  <div className={styles.container}>
+  <div className={styles.aboutContainer}>
     <BackArrow className={styles.back} height="40px" fill="#FFF" onClick={toggleAbout} />
     <div className={cls(styles.about, styles.centreWrap)}>
       <div className={styles.section}>

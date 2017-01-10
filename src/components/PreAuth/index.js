@@ -4,11 +4,18 @@ import Landing from './landing'
 import About from './about'
 
 const PreAuth = ({ aboutVisible, redirectToAuth, toggleAbout }) => {
+  let component
   if (aboutVisible) {
-    return <About toggleAbout={toggleAbout} />
+    component = <About toggleAbout={toggleAbout} />
   } else {
-    return <Landing toggleAbout={toggleAbout} redirectToAuth={redirectToAuth} />
+    component = <Landing toggleAbout={toggleAbout} redirectToAuth={redirectToAuth} />
   }
+
+  return (
+    <div className={styles.container}>
+      {component}
+    </div>
+  )
 }
 
 export default PreAuth

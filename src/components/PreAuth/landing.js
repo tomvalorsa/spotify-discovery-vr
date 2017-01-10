@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styles from './index.css'
 
 const Landing = ({ redirectToAuth, toggleAbout }) => (
-  <div className={styles.container}>
+  <div className={styles.landingContainer}>
     <div className={styles.centreWrap}>
       <h1>Spotfiy Discovery VR</h1>
       <p>Discover new music in WebVR</p>
