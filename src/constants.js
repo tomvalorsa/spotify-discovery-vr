@@ -1,6 +1,6 @@
 const getRedirectUri = () => {
   if (process.env.NODE_ENV === 'production') {
-    return 'http://tomvalorsa.github.io/spotify-discovery-vr'
+    return 'https://tomvalorsa.github.io/spotify-discovery-vr/'
   } else {
     return 'http://localhost/spotify-discovery-vr/dist/'
   }
