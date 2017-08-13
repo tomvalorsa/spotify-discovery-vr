@@ -40,8 +40,7 @@ module.exports = {
     ]),
     new webpack.DefinePlugin({
       'process.env': {
-        'CLIENT_ID': JSON.stringify(process.env.CLIENT_ID),
-        'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+        'CLIENT_ID': JSON.stringify(process.env.CLIENT_ID)
       }
     })
   ],
