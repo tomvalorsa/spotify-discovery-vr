@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "NODE_ENV=production webpack",
-    "dev": "webpack --watch"
+    "clean": "rm -rf dist/*",
+    "build": "npm run clean && webpack",
+    "build:prod": "npm run clean && webpack --config ./webpack.config.production.babel.js",
+    "dev": "npm run clean && webpack --watch"
   },
   "author": "Tom Valorsa (github/tomvalorsa)",
   "dependencies": {
