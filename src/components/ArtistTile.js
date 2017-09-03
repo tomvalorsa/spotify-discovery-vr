@@ -12,6 +12,7 @@ export default class ArtistTile extends Component {
 
     SpotifyApi.getArtistTopTracks(artist.id, 'AU')
       .then(result => {
+        // BUG: tracks not coming through here
         setArtistInfo(artist.id, result.tracks)
       })
       .catch(err => console.log(err))
