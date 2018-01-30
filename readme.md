@@ -9,7 +9,8 @@ This is a simple playlist creator for Spotify which allows users to explore musi
 - log into your Spotify account when prompted so the app can get permission to access your top artists and make you a playlist
 - select an artist to begin listening to their top tracks
 - use the playback controls to cycle through an artist's tracks or find related artists
-- when finished select the record at your feet (i.e. look down) to save the playlist
+- press the '+' symbol to hold onto the tracks you like
+- when finished select the badly-drawn vinyl record at your feet (i.e. look down) to save the playlist
 - go and listen to it on Spotify!
 
 _N.B. Still a bit buggy, improvements still being made :)_
